@@ -1,7 +1,7 @@
 <?php
 $servidor = "localhost";
 $usuario = "root";
-$senha = "senac";
+$senha = "";
 $database = "myDB";
 // criando a conexão
 $conn = new mysqli($servidor,$usuario,$senha,$database);
