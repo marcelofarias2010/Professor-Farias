@@ -18,7 +18,7 @@ and open the template in the editor.
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="container">
+        <div class="container table-responsive">
             <h2 class="display-3">Listar de Usuários</h2>
             <?php
             include './conexao/conectMysqli.php';
@@ -52,7 +52,8 @@ and open the template in the editor.
                 echo "0 results";
             }
             $conn->close();
-            ?>
+            ?>       
         </div>
+        
     </body>
 </html>
