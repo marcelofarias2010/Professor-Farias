@@ -17,6 +17,7 @@ if ($Acao == "Cadastrar") {
     echo 'dados cadastrados';
     $stmt->close();
     $conn->close();
+    header("Location:frmCadastro.php");
 } else {
     $firstname = ($_POST["nome"]);
     $lastname = ($_POST["sobrenome"]);
@@ -25,8 +26,10 @@ if ($Acao == "Cadastrar") {
 
     if ($conn->query($sql) === TRUE) {
         echo "Dados atualizado com sucesso";
+        header("Location:select.php");
     } else {
         echo "Erro na atualização: " . $conn->error;
+        header("Location:select.php");
     }
 
     $conn->close();

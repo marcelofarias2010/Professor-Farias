@@ -1,5 +1,8 @@
 <?php
+session_start();
 include './conexao/conectMysqli.php';
+
+
 if (isset($_GET['id'])) {
     $Acao = "Editar";
     $sql = "SELECT * FROM MyGuests WHERE id={$_GET['id']}";
@@ -34,7 +37,11 @@ if (isset($_GET['id'])) {
     </head>
     <body>
         <div class="container" style="background: #ccc">
-            <h2 class="display-2">Formulário de cadastro</h2>      
+            <h2 class="display-2">Formulário de cadastro</h2> 
+            <?php
+            echo '<h2>Seja bem vindo ' . $_SESSION['usuarioNome'] . '.</h2>';
+            ?>
+            <h2><a href="sair.php">Sair</a></h2>
             <div>
                 <form method="post" action="prepareStatement.php">  
                     <input type="hidden" id="Acao" name="Acao"  value="<?php echo $Acao; ?>">
