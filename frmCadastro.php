@@ -1,6 +1,6 @@
 <?php
+session_start();
 include './conexao/conectMysqli.php';
-
 
 if (isset($_GET['id'])) {
     $Acao = "Editar";
@@ -35,9 +35,12 @@ if (isset($_GET['id'])) {
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="container" style="background: #ccc">
-            <h2 class="display-2">Formulário de cadastro</h2>           
-     
+        <div class="container" style="background: #ccc">          
+            <h2 class="display-2">Formulário de cadastro</h2> 
+            <?php
+            echo '<h2>Seja bem vindo ' . $_SESSION['usuarioNome'] . '.</h2>';
+            ?>
+            <h2><a href="sair.php">Sair</a></h2>
             <div>
                 <form method="post" action="prepareStatement.php">  
                     <input type="hidden" id="Acao" name="Acao"  value="<?php echo $Acao; ?>">
@@ -46,10 +49,9 @@ if (isset($_GET['id'])) {
                     <div class="form-group">Sobrenome: <input class="form-control" type="text" name="sobrenome" value="<?php echo $Sobrenome; ?>"> </div>         
                     <div class="form-group">E-mail: <input class="form-control" type="text" name="email" value="<?php echo $Email; ?>"></div>            
                     <input class="btn btn-outline-success" type="submit" name="submit" value="<?php echo $Acao; ?>">  
-                    
+                  
                 </form>
             </div>            
         </div>
-
     </body>
 </html>

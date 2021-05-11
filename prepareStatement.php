@@ -10,14 +10,17 @@ if ($Acao == "Cadastrar") {
     $firstname = ($_POST["nome"]);
     $lastname = ($_POST["sobrenome"]);
     $email = ($_POST["email"]);
-    
+
     $stmt->bind_param("sss", $firstname, $lastname, $email);
-    
+
     $stmt->execute();
     echo 'dados cadastrados';
     $stmt->close();
     $conn->close();
+
     header("Location:main.php?page=listar");
+
+    header("Location:frmCadastro.php");
 } else {
     $firstname = ($_POST["nome"]);
     $lastname = ($_POST["sobrenome"]);
@@ -26,10 +29,16 @@ if ($Acao == "Cadastrar") {
 
     if ($conn->query($sql) === TRUE) {
         echo "Dados atualizado com sucesso";
+
         header("Location:main.php?page=listar");
+
+        header("Location:select.php");
     } else {
         echo "Erro na atualização: " . $conn->error;
+
         //header("Location:main.php?page=listar");
+
+        header("Location:select.php");
     }
 
     $conn->close();
