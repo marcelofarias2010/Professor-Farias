@@ -19,7 +19,7 @@ and open the template in the editor.
     </head>
     <body>
         <div class="container table-responsive">
-            <h2 class="display-3">Listar de Usuários</h2>
+            <h2 class="text-center">Listar de Usuários</h2>
             <?php
             include './conexao/conectMysqli.php';
             $sql = "SELECT id, firstname, lastname, email FROM MyGuests";

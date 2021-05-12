@@ -25,10 +25,10 @@ and open the template in the editor.
                 echo '<h1>Seja bem vindo ' . $_SESSION['usuarioNome'] . '.</h1>';
                 ?>
             </h1>
-            <p>Resize this responsive page to see the effect!</p> 
+            <p>Curso de PHP com Mysql</p> 
         </div>
         <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="#">Logo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
